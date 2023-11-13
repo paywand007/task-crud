@@ -1,19 +1,13 @@
 import { defineRule } from "vee-validate";
+import { required} from "@vee-validate/rules";
+defineRule('required', required)
+ 
+defineRule("phone",( value: string)=> {
+  if ((!value || !value.length) ) {
 
-defineRule("required", (value: string) => {
-  if (!value || !value.length) {
-    return "This field is required";
-  }
-  return true;
-});
-defineRule("email", (value: string) => {
-  // Field is empty, should pass
-  if (!value || !value.length) {
-    return true;
-  }
-  // Check if email
-  if (!/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/.test(value)) {
-    return "This field must be a valid email";
-  }
-  return true;
+return "require  ";}
+else if (!/^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/.test(value)) return "must be a valid number "
+
+
+return true;
 });

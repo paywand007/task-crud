@@ -25,7 +25,7 @@
       <div class="mb-4">
         <label for="file" class="block text-sm font-medium text-gray-600">Choose File:</label>
         <input type="file" @change="handleFile" id="file" name="file" class="mt-1 p-2 border rounded-md w-full">
-        <span>{{ open.errorMessage.value }}</span>
+ 
       </div>
 
       <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">{{ route.params.id ? 'Update' : 'Add' }}</button>
